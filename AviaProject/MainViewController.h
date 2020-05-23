@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlaceViewController.h"
 
 @interface MainViewController : UIViewController
 

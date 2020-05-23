@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05DAEFBC247940710080426A /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DAEFBB247940710080426A /* PlaceViewController.m */; };
 		05F8A640246F11DE0011F7D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F8A63F246F11DE0011F7D1 /* AppDelegate.m */; };
 		05F8A643246F11DE0011F7D1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F8A642246F11DE0011F7D1 /* MainViewController.m */; };
 		05F8A648246F11E00011F7D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05F8A647246F11E00011F7D1 /* Assets.xcassets */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05DAEFBA247940710080426A /* PlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
+		05DAEFBB247940710080426A /* PlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
 		05F8A63B246F11DE0011F7D1 /* AviaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F8A63E246F11DE0011F7D1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		05F8A63F246F11DE0011F7D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 				05F8A649246F11E00011F7D1 /* LaunchScreen.storyboard */,
 				05F8A64C246F11E10011F7D1 /* Info.plist */,
 				05F8A64D246F11E10011F7D1 /* main.m */,
+				05DAEFBA247940710080426A /* PlaceViewController.h */,
+				05DAEFBB247940710080426A /* PlaceViewController.m */,
 			);
 			path = AviaProject;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				05F8A65E246F1BE70011F7D1 /* Country.m in Sources */,
 				05F8A667246F1F5C0011F7D1 /* DataManager.m in Sources */,
 				05F8A643246F11DE0011F7D1 /* MainViewController.m in Sources */,
+				05DAEFBC247940710080426A /* PlaceViewController.m in Sources */,
 				05F8A664246F1DCD0011F7D1 /* Airport.m in Sources */,
 				05F8A64E246F11E10011F7D1 /* main.m in Sources */,
 				05F8A640246F11DE0011F7D1 /* AppDelegate.m in Sources */,
