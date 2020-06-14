@@ -84,6 +84,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05126D0424966130006DDAF6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				05F8A641246F11DE0011F7D1 /* MainViewController.h */,
+				05F8A642246F11DE0011F7D1 /* MainViewController.m */,
+				05126D0124964814006DDAF6 /* MapViewController.h */,
+				05126D0224964814006DDAF6 /* MapViewController.m */,
+				05DAEFBA247940710080426A /* PlaceViewController.h */,
+				05DAEFBB247940710080426A /* PlaceViewController.m */,
+				057C61702482FFDE00DCCA6C /* TicketsViewController.h */,
+				057C61712482FFDE00DCCA6C /* TicketsViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		05126D0524966196006DDAF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				057C616D2482F3D500DCCA6C /* TicketTableViewCell.h */,
+				057C616E2482F3D500DCCA6C /* TicketTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		0526454B248275DC00976F69 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,24 +140,16 @@
 		05F8A63D246F11DE0011F7D1 /* AviaProject */ = {
 			isa = PBXGroup;
 			children = (
+				05126D0424966130006DDAF6 /* Controllers */,
 				0526454B248275DC00976F69 /* API */,
 				05F8A654246F1A9D0011F7D1 /* Data */,
+				05126D0524966196006DDAF6 /* View */,
 				05F8A63E246F11DE0011F7D1 /* AppDelegate.h */,
 				05F8A63F246F11DE0011F7D1 /* AppDelegate.m */,
-				05F8A641246F11DE0011F7D1 /* MainViewController.h */,
-				05F8A642246F11DE0011F7D1 /* MainViewController.m */,
-				05126D0124964814006DDAF6 /* MapViewController.h */,
-				05126D0224964814006DDAF6 /* MapViewController.m */,
 				05F8A647246F11E00011F7D1 /* Assets.xcassets */,
 				05F8A649246F11E00011F7D1 /* LaunchScreen.storyboard */,
 				05F8A64C246F11E10011F7D1 /* Info.plist */,
 				05F8A64D246F11E10011F7D1 /* main.m */,
-				05DAEFBA247940710080426A /* PlaceViewController.h */,
-				05DAEFBB247940710080426A /* PlaceViewController.m */,
-				057C616D2482F3D500DCCA6C /* TicketTableViewCell.h */,
-				057C616E2482F3D500DCCA6C /* TicketTableViewCell.m */,
-				057C61702482FFDE00DCCA6C /* TicketsViewController.h */,
-				057C61712482FFDE00DCCA6C /* TicketsViewController.m */,
 			);
 			path = AviaProject;
 			sourceTree = "<group>";
