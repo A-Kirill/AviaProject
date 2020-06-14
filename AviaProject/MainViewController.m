@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "DataManager.h"
 #import "TicketsViewController.h"
+#import "MapViewController.h"
 
 
 @interface MainViewController () <PlaceViewControllerDelegate>
@@ -78,7 +79,7 @@
     _mapButton.layer.cornerRadius = 8.0;
     _mapButton.titleLabel.font = [UIFont systemFontOfSize:20.0 weight:UIFontWeightBold];
     [_mapButton addTarget:self action:@selector(mapButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_searchButton];
+    [self.view addSubview:_mapButton];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataLoadedSuccessfully) name:kDataManagerLoadDataDidComplete object:nil];
     
@@ -111,7 +112,8 @@
 }
 
 - (void)mapButtonDidTap:(UIButton *)sender {
-    
+    MapViewController *mapVC = [MapViewController new];
+    [self.navigationController pushViewController: mapVC animated:YES];
 }
 
 #pragma mark - PlaceViewControllerDelegate
@@ -150,12 +152,5 @@
         [self setPlace:city withDataType:DataSourceTypeCity andPlaceType:PlaceTypeDeparture forButton:_departureButton];
     }];
 }
-
-
-
-//
-//- (void)loadDataComplete {
-//    self.view.backgroundColor = [UIColor greenColor];
-//}
 
 @end

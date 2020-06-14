@@ -53,6 +53,7 @@
 
 - (void)updateCurrentLocation:(NSNotification *)notification {
     CLLocation *currentLocation = notification.object;
+    [self addressFromLocation:currentLocation];
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 1000000, 1000000);
     [_mapView setRegion: region animated: YES];
@@ -92,6 +93,22 @@
     annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 
     return annotationView;
+}
+
+// CLGeocoder
+- (void)addressFromLocation:(CLLocation *)location {
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        if ([placemarks count] > 0) {
+            NSMutableString *address = [[NSMutableString alloc] initWithString:@""];
+            for (MKPlacemark *placemark in placemarks) {
+                [address appendString:placemark.name];
+            }
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Your location address" message:address preferredStyle: UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Close" style:(UIAlertActionStyleDefault) handler:nil]];
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
+        }
+    }];
 }
 
 @end
