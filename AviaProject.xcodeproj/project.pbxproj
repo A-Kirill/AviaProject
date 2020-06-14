@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05126CFD249641A1006DDAF6 /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05126CFC249641A1006DDAF6 /* LocationService.m */; };
 		05126D0024964372006DDAF6 /* MapPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 05126CFF24964372006DDAF6 /* MapPrice.m */; };
+		05126D0324964814006DDAF6 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05126D0224964814006DDAF6 /* MapViewController.m */; };
 		0526454E2482760D00976F69 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0526454D2482760D00976F69 /* APIManager.m */; };
 		0526455124827CD200976F69 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0526455024827CD200976F69 /* Ticket.m */; };
 		057C616F2482F3D500DCCA6C /* TicketTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 057C616E2482F3D500DCCA6C /* TicketTableViewCell.m */; };
@@ -34,6 +35,8 @@
 		05126CFC249641A1006DDAF6 /* LocationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationService.m; sourceTree = "<group>"; };
 		05126CFE24964372006DDAF6 /* MapPrice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapPrice.h; sourceTree = "<group>"; };
 		05126CFF24964372006DDAF6 /* MapPrice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapPrice.m; sourceTree = "<group>"; };
+		05126D0124964814006DDAF6 /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		05126D0224964814006DDAF6 /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		0526454C2482760D00976F69 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		0526454D2482760D00976F69 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		0526454F24827CD200976F69 /* Ticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ticket.h; sourceTree = "<group>"; };
@@ -119,6 +122,8 @@
 				05F8A63F246F11DE0011F7D1 /* AppDelegate.m */,
 				05F8A641246F11DE0011F7D1 /* MainViewController.h */,
 				05F8A642246F11DE0011F7D1 /* MainViewController.m */,
+				05126D0124964814006DDAF6 /* MapViewController.h */,
+				05126D0224964814006DDAF6 /* MapViewController.m */,
 				05F8A647246F11E00011F7D1 /* Assets.xcassets */,
 				05F8A649246F11E00011F7D1 /* LaunchScreen.storyboard */,
 				05F8A64C246F11E10011F7D1 /* Info.plist */,
@@ -308,6 +313,7 @@
 				05DAEFBC247940710080426A /* PlaceViewController.m in Sources */,
 				057C61722482FFDE00DCCA6C /* TicketsViewController.m in Sources */,
 				05F8A664246F1DCD0011F7D1 /* Airport.m in Sources */,
+				05126D0324964814006DDAF6 /* MapViewController.m in Sources */,
 				05F8A64E246F11E10011F7D1 /* main.m in Sources */,
 				05F8A640246F11DE0011F7D1 /* AppDelegate.m in Sources */,
 			);
