@@ -10,12 +10,6 @@
 #import "DataManager.h"
 #import "TicketsViewController.h"
 
-//typedef struct SearchRequest {
-//    __unsafe_unretained NSString *origin;
-//    __unsafe_unretained NSString *destionation;
-//    __unsafe_unretained NSDate *departDate;
-//    __unsafe_unretained NSDate *returnDate;
-//} SearchRequest;
 
 @interface MainViewController () <PlaceViewControllerDelegate>
 
@@ -24,6 +18,7 @@
 @property (nonatomic) SearchRequest searchRequest;
 @property (nonatomic, strong) UIView *placeContainerView;
 @property (nonatomic, strong) UIButton *searchButton;
+@property (nonatomic, strong) UIButton *mapButton;
 
 @end
 
@@ -75,6 +70,16 @@
     _searchButton.titleLabel.font = [UIFont systemFontOfSize:20.0 weight:UIFontWeightBold];
     [self.view addSubview:_searchButton];
     
+    _mapButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_mapButton setTitle:@"Price map" forState:UIControlStateNormal];
+    _mapButton.tintColor = [UIColor whiteColor];
+    _mapButton.frame = CGRectMake(30.0, CGRectGetMaxY(_searchButton.frame) + 30, [UIScreen mainScreen].bounds.size.width - 60.0, 60.0);
+    _mapButton.backgroundColor = [UIColor blackColor];
+    _mapButton.layer.cornerRadius = 8.0;
+    _mapButton.titleLabel.font = [UIFont systemFontOfSize:20.0 weight:UIFontWeightBold];
+    [_mapButton addTarget:self action:@selector(mapButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_searchButton];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataLoadedSuccessfully) name:kDataManagerLoadDataDidComplete object:nil];
     
     [_searchButton addTarget:self action:@selector(searchButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
@@ -103,6 +108,10 @@
     }
     placeViewController.delegate = self;
     [self.navigationController pushViewController: placeViewController animated:YES];
+}
+
+- (void)mapButtonDidTap:(UIButton *)sender {
+    
 }
 
 #pragma mark - PlaceViewControllerDelegate

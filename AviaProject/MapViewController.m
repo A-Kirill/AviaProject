@@ -30,10 +30,10 @@
     
     CGRect frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     
-  //  self.title = @"Карта цен";
+    self.title = @"Price map";
     
     _mapView = [[MKMapView alloc] initWithFrame:frame];
-    _mapView.showsUserLocation = true;
+    _mapView.showsUserLocation = YES;
     [self.view addSubview:_mapView];
     [self.mapView setDelegate:self];
     
@@ -55,7 +55,7 @@
     CLLocation *currentLocation = notification.object;
     
     MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(currentLocation.coordinate, 1000000, 1000000);
-    [_mapView setRegion: region /*animated: YES*/];
+    [_mapView setRegion: region animated: YES];
     
     if (currentLocation) {
         _origin = [[DataManager sharedInstance] cityForLocation:currentLocation];
@@ -75,23 +75,23 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
             annotation.title = [NSString stringWithFormat:@"%@ (%@)", price.destination.name, price.destination.code];
-            annotation.subtitle = [NSString stringWithFormat:@"%ld руб.", (long)price.value];
+            annotation.subtitle = [NSString stringWithFormat:@"%ld RUB.", (long)price.value];
             annotation.coordinate = price.destination.coordinate;
             [self.mapView addAnnotation: annotation];
         });
     }
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
-    
+
     MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
     annotationView.canShowCallout = YES;
     annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    
+
     return annotationView;
 }
-
 
 @end
