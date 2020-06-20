@@ -12,12 +12,13 @@
 		05126D0324964814006DDAF6 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05126D0224964814006DDAF6 /* MapViewController.m */; };
 		0526454E2482760D00976F69 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0526454D2482760D00976F69 /* APIManager.m */; };
 		0526455124827CD200976F69 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0526455024827CD200976F69 /* Ticket.m */; };
+		054E2BC5249E5D10003A385F /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054E2BC4249E5D10003A385F /* TabBarController.m */; };
+		0569BB7C249E6F3100C597CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0569BB7B249E6F3100C597CD /* Assets.xcassets */; };
 		057C616F2482F3D500DCCA6C /* TicketTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 057C616E2482F3D500DCCA6C /* TicketTableViewCell.m */; };
 		057C61722482FFDE00DCCA6C /* TicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 057C61712482FFDE00DCCA6C /* TicketsViewController.m */; };
 		05DAEFBC247940710080426A /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DAEFBB247940710080426A /* PlaceViewController.m */; };
 		05F8A640246F11DE0011F7D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F8A63F246F11DE0011F7D1 /* AppDelegate.m */; };
 		05F8A643246F11DE0011F7D1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F8A642246F11DE0011F7D1 /* MainViewController.m */; };
-		05F8A648246F11E00011F7D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05F8A647246F11E00011F7D1 /* Assets.xcassets */; };
 		05F8A64B246F11E00011F7D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F8A649246F11E00011F7D1 /* LaunchScreen.storyboard */; };
 		05F8A64E246F11E10011F7D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F8A64D246F11E10011F7D1 /* main.m */; };
 		05F8A659246F1B820011F7D1 /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 05F8A656246F1B820011F7D1 /* cities.json */; };
@@ -41,6 +42,9 @@
 		0526454D2482760D00976F69 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		0526454F24827CD200976F69 /* Ticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ticket.h; sourceTree = "<group>"; };
 		0526455024827CD200976F69 /* Ticket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ticket.m; sourceTree = "<group>"; };
+		054E2BC3249E5D10003A385F /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		054E2BC4249E5D10003A385F /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		0569BB7B249E6F3100C597CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		057C616D2482F3D500DCCA6C /* TicketTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketTableViewCell.h; sourceTree = "<group>"; };
 		057C616E2482F3D500DCCA6C /* TicketTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketTableViewCell.m; sourceTree = "<group>"; };
 		057C61702482FFDE00DCCA6C /* TicketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsViewController.h; sourceTree = "<group>"; };
@@ -52,7 +56,6 @@
 		05F8A63F246F11DE0011F7D1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		05F8A641246F11DE0011F7D1 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		05F8A642246F11DE0011F7D1 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		05F8A647246F11E00011F7D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05F8A64A246F11E00011F7D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05F8A64C246F11E10011F7D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05F8A64D246F11E10011F7D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 				05DAEFBB247940710080426A /* PlaceViewController.m */,
 				057C61702482FFDE00DCCA6C /* TicketsViewController.h */,
 				057C61712482FFDE00DCCA6C /* TicketsViewController.m */,
+				054E2BC3249E5D10003A385F /* TabBarController.h */,
+				054E2BC4249E5D10003A385F /* TabBarController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -146,7 +151,7 @@
 				05126D0524966196006DDAF6 /* View */,
 				05F8A63E246F11DE0011F7D1 /* AppDelegate.h */,
 				05F8A63F246F11DE0011F7D1 /* AppDelegate.m */,
-				05F8A647246F11E00011F7D1 /* Assets.xcassets */,
+				0569BB7B249E6F3100C597CD /* Assets.xcassets */,
 				05F8A649246F11E00011F7D1 /* LaunchScreen.storyboard */,
 				05F8A64C246F11E10011F7D1 /* Info.plist */,
 				05F8A64D246F11E10011F7D1 /* main.m */,
@@ -264,7 +269,7 @@
 				05F8A65A246F1B820011F7D1 /* airports.json in Resources */,
 				05F8A64B246F11E00011F7D1 /* LaunchScreen.storyboard in Resources */,
 				05F8A65B246F1B820011F7D1 /* countries.json in Resources */,
-				05F8A648246F11E00011F7D1 /* Assets.xcassets in Resources */,
+				0569BB7C249E6F3100C597CD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +335,7 @@
 				057C61722482FFDE00DCCA6C /* TicketsViewController.m in Sources */,
 				05F8A664246F1DCD0011F7D1 /* Airport.m in Sources */,
 				05126D0324964814006DDAF6 /* MapViewController.m in Sources */,
+				054E2BC5249E5D10003A385F /* TabBarController.m in Sources */,
 				05F8A64E246F11E10011F7D1 /* main.m in Sources */,
 				05F8A640246F11DE0011F7D1 /* AppDelegate.m in Sources */,
 			);

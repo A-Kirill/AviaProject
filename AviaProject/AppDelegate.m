@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "MapViewController.h"
+#import "TabBarController.h"
 
 @interface AppDelegate ()
 
@@ -21,11 +22,14 @@
     
     CGRect windowFrame = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame: windowFrame];
+ 
+    TabBarController *tabBarController = [[TabBarController alloc] init];
     
-    MainViewController *mainViewController = [[MainViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController: mainViewController];
-    
-    self.window.rootViewController = navigationController;
+    self.window.rootViewController = tabBarController;
+//    MainViewController *mainViewController = [[MainViewController alloc] init];
+//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController: mainViewController];
+//
+//    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
 
     return YES;
