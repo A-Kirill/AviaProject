@@ -9,6 +9,7 @@
 #import "TabBarController.h"
 #import "MainViewController.h"
 #import "MapViewController.h"
+#import "CollectionViewController.h"
 
 @interface TabBarController ()
 
@@ -39,6 +40,11 @@
     mapViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Price map" image:[UIImage imageNamed:@"map"] selectedImage:[UIImage imageNamed:@"map_selected"]];
     UINavigationController *mapNavigationController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
     [controllers addObject:mapNavigationController];
+    
+    CollectionViewController *collectionViewController = [[CollectionViewController alloc] init];
+    collectionViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Images" image:[UIImage imageNamed:@"picture"] selectedImage:[UIImage imageNamed:@"picture-2"]];
+    UINavigationController *collectionNavigationController = [[UINavigationController alloc] initWithRootViewController:collectionViewController];
+    [controllers addObject:collectionNavigationController];
     
     return controllers;
 }

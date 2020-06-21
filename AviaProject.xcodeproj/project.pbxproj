@@ -14,6 +14,8 @@
 		0526455124827CD200976F69 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0526455024827CD200976F69 /* Ticket.m */; };
 		054E2BC5249E5D10003A385F /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054E2BC4249E5D10003A385F /* TabBarController.m */; };
 		0569BB7C249E6F3100C597CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0569BB7B249E6F3100C597CD /* Assets.xcassets */; };
+		0569BB7F249F69CD00C597CD /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569BB7E249F69CD00C597CD /* CollectionViewController.m */; };
+		0569BB85249FC33B00C597CD /* ImageCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569BB84249FC33B00C597CD /* ImageCollectionCell.m */; };
 		057C616F2482F3D500DCCA6C /* TicketTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 057C616E2482F3D500DCCA6C /* TicketTableViewCell.m */; };
 		057C61722482FFDE00DCCA6C /* TicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 057C61712482FFDE00DCCA6C /* TicketsViewController.m */; };
 		05DAEFBC247940710080426A /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DAEFBB247940710080426A /* PlaceViewController.m */; };
@@ -45,6 +47,10 @@
 		054E2BC3249E5D10003A385F /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		054E2BC4249E5D10003A385F /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		0569BB7B249E6F3100C597CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0569BB7D249F69CD00C597CD /* CollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		0569BB7E249F69CD00C597CD /* CollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		0569BB83249FC33B00C597CD /* ImageCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageCollectionCell.h; sourceTree = "<group>"; };
+		0569BB84249FC33B00C597CD /* ImageCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionCell.m; sourceTree = "<group>"; };
 		057C616D2482F3D500DCCA6C /* TicketTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketTableViewCell.h; sourceTree = "<group>"; };
 		057C616E2482F3D500DCCA6C /* TicketTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketTableViewCell.m; sourceTree = "<group>"; };
 		057C61702482FFDE00DCCA6C /* TicketsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TicketsViewController.h; sourceTree = "<group>"; };
@@ -100,6 +106,8 @@
 				057C61712482FFDE00DCCA6C /* TicketsViewController.m */,
 				054E2BC3249E5D10003A385F /* TabBarController.h */,
 				054E2BC4249E5D10003A385F /* TabBarController.m */,
+				0569BB7D249F69CD00C597CD /* CollectionViewController.h */,
+				0569BB7E249F69CD00C597CD /* CollectionViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -109,6 +117,8 @@
 			children = (
 				057C616D2482F3D500DCCA6C /* TicketTableViewCell.h */,
 				057C616E2482F3D500DCCA6C /* TicketTableViewCell.m */,
+				0569BB83249FC33B00C597CD /* ImageCollectionCell.h */,
+				0569BB84249FC33B00C597CD /* ImageCollectionCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -323,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05F8A661246F1C8E0011F7D1 /* City.m in Sources */,
+				0569BB85249FC33B00C597CD /* ImageCollectionCell.m in Sources */,
 				05F8A65E246F1BE70011F7D1 /* Country.m in Sources */,
 				0526454E2482760D00976F69 /* APIManager.m in Sources */,
 				05F8A667246F1F5C0011F7D1 /* DataManager.m in Sources */,
@@ -334,6 +345,7 @@
 				05DAEFBC247940710080426A /* PlaceViewController.m in Sources */,
 				057C61722482FFDE00DCCA6C /* TicketsViewController.m in Sources */,
 				05F8A664246F1DCD0011F7D1 /* Airport.m in Sources */,
+				0569BB7F249F69CD00C597CD /* CollectionViewController.m in Sources */,
 				05126D0324964814006DDAF6 /* MapViewController.m in Sources */,
 				054E2BC5249E5D10003A385F /* TabBarController.m in Sources */,
 				05F8A64E246F11E10011F7D1 /* main.m in Sources */,
