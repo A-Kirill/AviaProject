@@ -10,6 +10,7 @@
 #import "LocationService.h"
 #import "APIManager.h"
 #import "MapPrice.h"
+#import "CoreDataHelper.h"
 
 
 @interface MapViewController () <MKMapViewDelegate>
@@ -90,9 +91,35 @@
 
     MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
     annotationView.canShowCallout = YES;
-    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    UIButton *actionButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    [actionButton addTarget:self action:@selector(pushButton:) forControlEvents:UIControlEventTouchUpInside];
+    annotationView.rightCalloutAccessoryView = actionButton;
+ //   annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 
     return annotationView;
+}
+
+-(void)pushButton:(UIButton *) sender {
+    NSLog(@"actionForAnnButton");
+  //  if (isFavoritesMapPrice) return;
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Действия с билетом" message:@"Что необходимо сделать с выбранным билетом?" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *favoriteAction;
+    favoriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
+//    if ([[CoreDataHelper sharedInstance] isFavorite: _tickets]) {
+//        favoriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+//            [[CoreDataHelper sharedInstance] removeFromFavorite:self->_tickets];
+//        }];
+//    } else {
+//        favoriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            [[CoreDataHelper sharedInstance] addToFavorite:self->_tickets];
+//        }];
+//    }
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:favoriteAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 // CLGeocoder
