@@ -12,6 +12,10 @@
 		05126D0324964814006DDAF6 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05126D0224964814006DDAF6 /* MapViewController.m */; };
 		0526454E2482760D00976F69 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0526454D2482760D00976F69 /* APIManager.m */; };
 		0526455124827CD200976F69 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 0526455024827CD200976F69 /* Ticket.m */; };
+		054B841024A736B300351448 /* AviaProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 054B840E24A736B300351448 /* AviaProject.xcdatamodeld */; };
+		054B841524A7389700351448 /* FavoriteTicket+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B841324A7389700351448 /* FavoriteTicket+CoreDataClass.m */; };
+		054B841624A7389700351448 /* FavoriteTicket+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B841424A7389700351448 /* FavoriteTicket+CoreDataProperties.m */; };
+		054B841924A744A300351448 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B841824A744A300351448 /* CoreDataHelper.m */; };
 		054E2BC5249E5D10003A385F /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054E2BC4249E5D10003A385F /* TabBarController.m */; };
 		0569BB7C249E6F3100C597CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0569BB7B249E6F3100C597CD /* Assets.xcassets */; };
 		0569BB7F249F69CD00C597CD /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569BB7E249F69CD00C597CD /* CollectionViewController.m */; };
@@ -44,6 +48,13 @@
 		0526454D2482760D00976F69 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		0526454F24827CD200976F69 /* Ticket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ticket.h; sourceTree = "<group>"; };
 		0526455024827CD200976F69 /* Ticket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ticket.m; sourceTree = "<group>"; };
+		054B840F24A736B300351448 /* AviaProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AviaProject.xcdatamodel; sourceTree = "<group>"; };
+		054B841124A7389700351448 /* FavoriteTicket+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteTicket+CoreDataProperties.h"; sourceTree = "<group>"; };
+		054B841224A7389700351448 /* FavoriteTicket+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteTicket+CoreDataClass.h"; sourceTree = "<group>"; };
+		054B841324A7389700351448 /* FavoriteTicket+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteTicket+CoreDataClass.m"; sourceTree = "<group>"; };
+		054B841424A7389700351448 /* FavoriteTicket+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteTicket+CoreDataProperties.m"; sourceTree = "<group>"; };
+		054B841724A744A300351448 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		054B841824A744A300351448 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		054E2BC3249E5D10003A385F /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		054E2BC4249E5D10003A385F /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		0569BB7B249E6F3100C597CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -172,6 +183,7 @@
 		05F8A654246F1A9D0011F7D1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				05FBD09A24A734D400C61F2E /* CoreData */,
 				05F8A655246F1AAB0011F7D1 /* Model */,
 				05F8A657246F1B820011F7D1 /* airports.json */,
 				05F8A656246F1B820011F7D1 /* cities.json */,
@@ -197,6 +209,20 @@
 				05126CFF24964372006DDAF6 /* MapPrice.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		05FBD09A24A734D400C61F2E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				054B841124A7389700351448 /* FavoriteTicket+CoreDataProperties.h */,
+				054B841224A7389700351448 /* FavoriteTicket+CoreDataClass.h */,
+				054B841324A7389700351448 /* FavoriteTicket+CoreDataClass.m */,
+				054B841424A7389700351448 /* FavoriteTicket+CoreDataProperties.m */,
+				054B840E24A736B300351448 /* AviaProject.xcdatamodeld */,
+				054B841724A744A300351448 /* CoreDataHelper.h */,
+				054B841824A744A300351448 /* CoreDataHelper.m */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		724975F270EEA1BA7AECF150 /* Pods */ = {
@@ -249,6 +275,7 @@
 				TargetAttributes = {
 					05F8A63A246F11DE0011F7D1 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -333,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05F8A661246F1C8E0011F7D1 /* City.m in Sources */,
+				054B841524A7389700351448 /* FavoriteTicket+CoreDataClass.m in Sources */,
 				0569BB85249FC33B00C597CD /* ImageCollectionCell.m in Sources */,
 				05F8A65E246F1BE70011F7D1 /* Country.m in Sources */,
 				0526454E2482760D00976F69 /* APIManager.m in Sources */,
@@ -340,6 +368,7 @@
 				057C616F2482F3D500DCCA6C /* TicketTableViewCell.m in Sources */,
 				05F8A643246F11DE0011F7D1 /* MainViewController.m in Sources */,
 				05126D0024964372006DDAF6 /* MapPrice.m in Sources */,
+				054B841624A7389700351448 /* FavoriteTicket+CoreDataProperties.m in Sources */,
 				0526455124827CD200976F69 /* Ticket.m in Sources */,
 				05126CFD249641A1006DDAF6 /* LocationService.m in Sources */,
 				05DAEFBC247940710080426A /* PlaceViewController.m in Sources */,
@@ -348,8 +377,10 @@
 				0569BB7F249F69CD00C597CD /* CollectionViewController.m in Sources */,
 				05126D0324964814006DDAF6 /* MapViewController.m in Sources */,
 				054E2BC5249E5D10003A385F /* TabBarController.m in Sources */,
+				054B841924A744A300351448 /* CoreDataHelper.m in Sources */,
 				05F8A64E246F11E10011F7D1 /* main.m in Sources */,
 				05F8A640246F11DE0011F7D1 /* AppDelegate.m in Sources */,
+				054B841024A736B300351448 /* AviaProject.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +515,7 @@
 			baseConfigurationReference = FE41497A5D740D187ED2AD53 /* Pods-AviaProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Q8CDQHFHQ;
 				INFOPLIST_FILE = AviaProject/Info.plist;
@@ -493,6 +525,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.k-anisimov.AviaProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AviaProject/Data/CoreData/AviaProject-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -502,6 +537,7 @@
 			baseConfigurationReference = 478A9D908563EDCB1465046C /* Pods-AviaProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Q8CDQHFHQ;
 				INFOPLIST_FILE = AviaProject/Info.plist;
@@ -511,6 +547,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.k-anisimov.AviaProject";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AviaProject/Data/CoreData/AviaProject-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -537,6 +575,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		054B840E24A736B300351448 /* AviaProject.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				054B840F24A736B300351448 /* AviaProject.xcdatamodel */,
+			);
+			currentVersion = 054B840F24A736B300351448 /* AviaProject.xcdatamodel */;
+			path = AviaProject.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 05F8A633246F11DE0011F7D1 /* Project object */;
 }
