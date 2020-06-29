@@ -10,6 +10,7 @@
 #import "DataManager.h"
 #import "APIManager.h"
 #import "FavoriteTicket+CoreDataClass.h"
+#import "FavoriteMapPrice+CoreDataClass.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) Ticket *ticket;
 @property (nonatomic, strong) FavoriteTicket *favoriteTicket;
+@property (nonatomic, strong) FavoriteMapPrice *favoriteMapPrice;
 
 @end
 

@@ -54,7 +54,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.contentView.frame = CGRectMake(10.0, 10.0, [UIScreen mainScreen].bounds.size.width - 20.0, self.frame.size.height - 20.0);
+    self.contentView.frame = CGRectMake(10.0, 10.0, [UIScreen mainScreen].bounds.size.width - 20.0, /*self.frame.size.height - 20.0*/120);
     _priceLabel.frame = CGRectMake(10.0, 10.0, self.contentView.frame.size.width - 110.0, 40.0);
     _airlineLogoView.frame = CGRectMake(CGRectGetMaxX(_priceLabel.frame) + 10.0, 10.0, 80.0, 80.0);
     _placesLabel.frame = CGRectMake(10.0, CGRectGetMaxY(_priceLabel.frame) + 16.0, 100.0, 20.0);
@@ -87,6 +87,16 @@
     [_airlineLogoView yy_setImageWithURL:urlLogo options:YYWebImageOptionSetImageWithFadeAnimation];
 }
 
+- (void)setFavoriteMapPrice:(FavoriteMapPrice *)favoriteMapPrice {
+    _favoriteMapPrice = favoriteMapPrice;
+    
+    _priceLabel.text = [NSString stringWithFormat:@"%@ - %@", favoriteMapPrice.origin, favoriteMapPrice.destination];
+    _placesLabel.text = [NSString stringWithFormat:@"%lld RUB.", favoriteMapPrice.value];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    _airlineLogoView.image = [UIImage imageNamed:@"defaultLogo"];
+    dateFormatter.dateFormat = @"dd MMMM yyyy hh:mm";
+    _dateLabel.text = [dateFormatter stringFromDate: favoriteMapPrice.departure];
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];

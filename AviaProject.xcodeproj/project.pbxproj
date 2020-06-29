@@ -16,6 +16,9 @@
 		054B841524A7389700351448 /* FavoriteTicket+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B841324A7389700351448 /* FavoriteTicket+CoreDataClass.m */; };
 		054B841624A7389700351448 /* FavoriteTicket+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B841424A7389700351448 /* FavoriteTicket+CoreDataProperties.m */; };
 		054B841924A744A300351448 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B841824A744A300351448 /* CoreDataHelper.m */; };
+		054B841E24A8A92300351448 /* FavoriteMapPrice+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B841C24A8A92300351448 /* FavoriteMapPrice+CoreDataClass.m */; };
+		054B841F24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B841D24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.m */; };
+		054B842224A8E1F500351448 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B842124A8E1F500351448 /* FavoriteViewController.m */; };
 		054E2BC5249E5D10003A385F /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054E2BC4249E5D10003A385F /* TabBarController.m */; };
 		0569BB7C249E6F3100C597CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0569BB7B249E6F3100C597CD /* Assets.xcassets */; };
 		0569BB7F249F69CD00C597CD /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569BB7E249F69CD00C597CD /* CollectionViewController.m */; };
@@ -55,6 +58,12 @@
 		054B841424A7389700351448 /* FavoriteTicket+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteTicket+CoreDataProperties.m"; sourceTree = "<group>"; };
 		054B841724A744A300351448 /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		054B841824A744A300351448 /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		054B841A24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteMapPrice+CoreDataProperties.h"; sourceTree = "<group>"; };
+		054B841B24A8A92300351448 /* FavoriteMapPrice+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FavoriteMapPrice+CoreDataClass.h"; sourceTree = "<group>"; };
+		054B841C24A8A92300351448 /* FavoriteMapPrice+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteMapPrice+CoreDataClass.m"; sourceTree = "<group>"; };
+		054B841D24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteMapPrice+CoreDataProperties.m"; sourceTree = "<group>"; };
+		054B842024A8E1F500351448 /* FavoriteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
+		054B842124A8E1F500351448 /* FavoriteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
 		054E2BC3249E5D10003A385F /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		054E2BC4249E5D10003A385F /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		0569BB7B249E6F3100C597CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +122,8 @@
 				05126D0224964814006DDAF6 /* MapViewController.m */,
 				05DAEFBA247940710080426A /* PlaceViewController.h */,
 				05DAEFBB247940710080426A /* PlaceViewController.m */,
+				054B842024A8E1F500351448 /* FavoriteViewController.h */,
+				054B842124A8E1F500351448 /* FavoriteViewController.m */,
 				057C61702482FFDE00DCCA6C /* TicketsViewController.h */,
 				057C61712482FFDE00DCCA6C /* TicketsViewController.m */,
 				054E2BC3249E5D10003A385F /* TabBarController.h */,
@@ -214,6 +225,10 @@
 		05FBD09A24A734D400C61F2E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				054B841A24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.h */,
+				054B841B24A8A92300351448 /* FavoriteMapPrice+CoreDataClass.h */,
+				054B841C24A8A92300351448 /* FavoriteMapPrice+CoreDataClass.m */,
+				054B841D24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.m */,
 				054B841124A7389700351448 /* FavoriteTicket+CoreDataProperties.h */,
 				054B841224A7389700351448 /* FavoriteTicket+CoreDataClass.h */,
 				054B841324A7389700351448 /* FavoriteTicket+CoreDataClass.m */,
@@ -371,13 +386,16 @@
 				054B841624A7389700351448 /* FavoriteTicket+CoreDataProperties.m in Sources */,
 				0526455124827CD200976F69 /* Ticket.m in Sources */,
 				05126CFD249641A1006DDAF6 /* LocationService.m in Sources */,
+				054B841E24A8A92300351448 /* FavoriteMapPrice+CoreDataClass.m in Sources */,
 				05DAEFBC247940710080426A /* PlaceViewController.m in Sources */,
 				057C61722482FFDE00DCCA6C /* TicketsViewController.m in Sources */,
+				054B842224A8E1F500351448 /* FavoriteViewController.m in Sources */,
 				05F8A664246F1DCD0011F7D1 /* Airport.m in Sources */,
 				0569BB7F249F69CD00C597CD /* CollectionViewController.m in Sources */,
 				05126D0324964814006DDAF6 /* MapViewController.m in Sources */,
 				054E2BC5249E5D10003A385F /* TabBarController.m in Sources */,
 				054B841924A744A300351448 /* CoreDataHelper.m in Sources */,
+				054B841F24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.m in Sources */,
 				05F8A64E246F11E10011F7D1 /* main.m in Sources */,
 				05F8A640246F11DE0011F7D1 /* AppDelegate.m in Sources */,
 				054B841024A736B300351448 /* AviaProject.xcdatamodeld in Sources */,

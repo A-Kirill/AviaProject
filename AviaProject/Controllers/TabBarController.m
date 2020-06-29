@@ -11,6 +11,7 @@
 #import "MapViewController.h"
 #import "CollectionViewController.h"
 #import "TicketsViewController.h"
+#import "FavoriteViewController.h"
 
 @interface TabBarController ()
 
@@ -51,6 +52,11 @@
     collectionViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Images" image:[UIImage imageNamed:@"picture"] selectedImage:[UIImage imageNamed:@"picture-2"]];
     UINavigationController *collectionNavigationController = [[UINavigationController alloc] initWithRootViewController:collectionViewController];
     [controllers addObject:collectionNavigationController];
+    
+    FavoriteViewController *favorite2ViewController = [[FavoriteViewController alloc] init];
+    favorite2ViewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:5];
+    UINavigationController *favorite2NavigationController = [[UINavigationController alloc] initWithRootViewController:favorite2ViewController];
+    [controllers addObject:favorite2NavigationController];
     
     return controllers;
 }

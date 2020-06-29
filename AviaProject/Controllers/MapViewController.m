@@ -91,35 +91,40 @@
 
     MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
     annotationView.canShowCallout = YES;
-    
-    UIButton *actionButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    [actionButton addTarget:self action:@selector(pushButton:) forControlEvents:UIControlEventTouchUpInside];
-    annotationView.rightCalloutAccessoryView = actionButton;
- //   annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 
     return annotationView;
 }
 
--(void)pushButton:(UIButton *) sender {
-    NSLog(@"actionForAnnButton");
-  //  if (isFavoritesMapPrice) return;
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Действия с билетом" message:@"Что необходимо сделать с выбранным билетом?" preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *favoriteAction;
-    favoriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {}];
-//    if ([[CoreDataHelper sharedInstance] isFavorite: _tickets]) {
-//        favoriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-//            [[CoreDataHelper sharedInstance] removeFromFavorite:self->_tickets];
-//        }];
-//    } else {
-//        favoriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//            [[CoreDataHelper sharedInstance] addToFavorite:self->_tickets];
-//        }];
-//    }
-    
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:nil];
-    [alertController addAction:favoriteAction];
-    [alertController addAction:cancelAction];
-    [self presentViewController:alertController animated:YES completion:nil];
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
+    NSString *originDest = view.annotation.title;
+    MapPrice* curPrice = nil;
+    if (_prices != nil) {
+        for (MapPrice* price in _prices) {
+            if ([originDest isEqualToString:[NSString stringWithFormat:@"%@ (%@)", price.destination.name, price.destination.code]]) {
+                curPrice = price;
+                break;
+            }
+        }
+    }
+    if (curPrice != nil) {
+        NSString *title = [NSString stringWithFormat:@"%@\n%@", view.annotation.title, view.annotation.subtitle];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:@"Что необходимо сделать?" preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *favoriteAction;
+        if ([[CoreDataHelper sharedInstance] isFavoriteMapPrice:curPrice]) {
+            favoriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                [[CoreDataHelper sharedInstance] removeFromFavoriteMapPrice:curPrice];
+            }];
+        } else {
+            favoriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [[CoreDataHelper sharedInstance] addToFavoriteMapPrice:curPrice];
+            }];
+        }
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:nil];
+        [alertController addAction:favoriteAction];
+        [alertController addAction:cancelAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
 }
 
 // CLGeocoder

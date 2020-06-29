@@ -58,8 +58,20 @@
     return [[_managedObjectContext executeFetchRequest:request error:nil] firstObject];
 }
 
+
+- (FavoriteMapPrice *)favoriteFromMapPrice:(MapPrice *)mapPrice {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteMapPrice"];
+    request.predicate = [NSPredicate predicateWithFormat:@"destination == %@ AND origin == %@ AND departure == %@ AND returnDate == %@ AND numberOfChanges == %ld AND value == %ld AND distance == %ld", mapPrice.destination.name, mapPrice.origin.name, mapPrice.departure, mapPrice.returnDate, mapPrice.numberOfChanges, mapPrice.value, mapPrice.distance];
+    return [[_managedObjectContext executeFetchRequest:request error:nil] firstObject];
+}
+
 - (BOOL)isFavorite:(Ticket *)ticket {
     return [self favoriteFromTicket:ticket] != nil;
+}
+
+
+- (BOOL)isFavoriteMapPrice:(MapPrice *)mapPrice {
+    return [self favoriteFromMapPrice:mapPrice] != nil;
 }
 
 - (void)addToFavorite:(Ticket *)ticket {
@@ -76,11 +88,37 @@
     [self save];
 }
 
+
+- (void)addToFavoriteMapPrice:(MapPrice *)mapPrice {
+    FavoriteMapPrice *favoriteMapPrice = [NSEntityDescription insertNewObjectForEntityForName:@"FavoriteMapPrice" inManagedObjectContext:_managedObjectContext];
+    favoriteMapPrice.destination = mapPrice.destination.name;
+    favoriteMapPrice.origin = mapPrice.origin.name;
+    favoriteMapPrice.departure = mapPrice.departure;
+    favoriteMapPrice.returnDate = mapPrice.returnDate;
+    favoriteMapPrice.numberOfChanges = mapPrice.numberOfChanges;
+    favoriteMapPrice.value = mapPrice.value;
+    favoriteMapPrice.distance = mapPrice.distance;
+    favoriteMapPrice.actual = mapPrice.actual;
+    favoriteMapPrice.created = [NSDate date];
+    [self save];
+    NSLog(@"added item to Core Data");
+}
+
 - (void)removeFromFavorite:(Ticket *)ticket {
     FavoriteTicket *favorite = [self favoriteFromTicket:ticket];
     if (favorite) {
         [_managedObjectContext deleteObject:favorite];
         [self save];
+    }
+}
+
+
+- (void)removeFromFavoriteMapPrice:(MapPrice *)mapPrice {
+    FavoriteMapPrice *favoriteMapPrice = [self favoriteFromMapPrice:mapPrice];
+    if (favoriteMapPrice) {
+        [_managedObjectContext deleteObject:favoriteMapPrice];
+        [self save];
+        NSLog(@"removed item from Core Data");
     }
 }
 
@@ -90,5 +128,11 @@
     return [_managedObjectContext executeFetchRequest:request error:nil];
 }
 
+
+- (NSArray *)favoritesMapPrice {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteMapPrice"];
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"created" ascending:NO]];
+    return [_managedObjectContext executeFetchRequest:request error:nil];
+}
 
 @end
