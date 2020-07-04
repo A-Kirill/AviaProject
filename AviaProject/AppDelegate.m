@@ -10,6 +10,7 @@
 #import "MainViewController.h"
 #import "MapViewController.h"
 #import "TabBarController.h"
+#import "NotificationCenter.h"
 
 @interface AppDelegate ()
 
@@ -31,6 +32,8 @@
 //
 //    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
+    
+    [[NotificationCenter sharedInstance] registerService];
 
     return YES;
 }

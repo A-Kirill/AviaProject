@@ -22,6 +22,7 @@
 		054B842524B06CC200351448 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B842424B06CC200351448 /* ProgressView.m */; };
 		054B842824B0A62300351448 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B842724B0A62300351448 /* ContentViewController.m */; };
 		054B842B24B0A72E00351448 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B842A24B0A72E00351448 /* FirstViewController.m */; };
+		054B842E24B0BB9300351448 /* NotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B842D24B0BB9300351448 /* NotificationCenter.m */; };
 		054E2BC5249E5D10003A385F /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054E2BC4249E5D10003A385F /* TabBarController.m */; };
 		0569BB7C249E6F3100C597CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0569BB7B249E6F3100C597CD /* Assets.xcassets */; };
 		0569BB7F249F69CD00C597CD /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569BB7E249F69CD00C597CD /* CollectionViewController.m */; };
@@ -73,6 +74,8 @@
 		054B842724B0A62300351448 /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
 		054B842924B0A72E00351448 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
 		054B842A24B0A72E00351448 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		054B842C24B0BB9300351448 /* NotificationCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationCenter.h; sourceTree = "<group>"; };
+		054B842D24B0BB9300351448 /* NotificationCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationCenter.m; sourceTree = "<group>"; };
 		054E2BC3249E5D10003A385F /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		054E2BC4249E5D10003A385F /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		0569BB7B249E6F3100C597CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -160,15 +163,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		0526454B248275DC00976F69 /* API */ = {
+		0526454B248275DC00976F69 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				0526454C2482760D00976F69 /* APIManager.h */,
 				0526454D2482760D00976F69 /* APIManager.m */,
 				05126CFB249641A1006DDAF6 /* LocationService.h */,
 				05126CFC249641A1006DDAF6 /* LocationService.m */,
+				054B842C24B0BB9300351448 /* NotificationCenter.h */,
+				054B842D24B0BB9300351448 /* NotificationCenter.m */,
 			);
-			path = API;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		05F8A632246F11DE0011F7D1 = {
@@ -193,7 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				05126D0424966130006DDAF6 /* Controllers */,
-				0526454B248275DC00976F69 /* API */,
+				0526454B248275DC00976F69 /* Managers */,
 				05F8A654246F1A9D0011F7D1 /* Data */,
 				05126D0524966196006DDAF6 /* View */,
 				05F8A63E246F11DE0011F7D1 /* AppDelegate.h */,
@@ -413,6 +418,7 @@
 				054B841924A744A300351448 /* CoreDataHelper.m in Sources */,
 				054B841F24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.m in Sources */,
 				054B842B24B0A72E00351448 /* FirstViewController.m in Sources */,
+				054B842E24B0BB9300351448 /* NotificationCenter.m in Sources */,
 				05F8A64E246F11E10011F7D1 /* main.m in Sources */,
 				05F8A640246F11DE0011F7D1 /* AppDelegate.m in Sources */,
 				054B841024A736B300351448 /* AviaProject.xcdatamodeld in Sources */,
