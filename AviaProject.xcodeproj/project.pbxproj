@@ -19,6 +19,7 @@
 		054B841E24A8A92300351448 /* FavoriteMapPrice+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B841C24A8A92300351448 /* FavoriteMapPrice+CoreDataClass.m */; };
 		054B841F24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B841D24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.m */; };
 		054B842224A8E1F500351448 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B842124A8E1F500351448 /* FavoriteViewController.m */; };
+		054B842524B06CC200351448 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B842424B06CC200351448 /* ProgressView.m */; };
 		054E2BC5249E5D10003A385F /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054E2BC4249E5D10003A385F /* TabBarController.m */; };
 		0569BB7C249E6F3100C597CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0569BB7B249E6F3100C597CD /* Assets.xcassets */; };
 		0569BB7F249F69CD00C597CD /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569BB7E249F69CD00C597CD /* CollectionViewController.m */; };
@@ -64,6 +65,8 @@
 		054B841D24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FavoriteMapPrice+CoreDataProperties.m"; sourceTree = "<group>"; };
 		054B842024A8E1F500351448 /* FavoriteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FavoriteViewController.h; sourceTree = "<group>"; };
 		054B842124A8E1F500351448 /* FavoriteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
+		054B842324B06CC200351448 /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		054B842424B06CC200351448 /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 		054E2BC3249E5D10003A385F /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		054E2BC4249E5D10003A385F /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		0569BB7B249E6F3100C597CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +144,8 @@
 				057C616E2482F3D500DCCA6C /* TicketTableViewCell.m */,
 				0569BB83249FC33B00C597CD /* ImageCollectionCell.h */,
 				0569BB84249FC33B00C597CD /* ImageCollectionCell.m */,
+				054B842324B06CC200351448 /* ProgressView.h */,
+				054B842424B06CC200351448 /* ProgressView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -399,6 +404,7 @@
 				05F8A64E246F11E10011F7D1 /* main.m in Sources */,
 				05F8A640246F11DE0011F7D1 /* AppDelegate.m in Sources */,
 				054B841024A736B300351448 /* AviaProject.xcdatamodeld in Sources */,
+				054B842524B06CC200351448 /* ProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
