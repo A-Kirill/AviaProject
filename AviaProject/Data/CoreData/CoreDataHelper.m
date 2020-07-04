@@ -52,16 +52,17 @@
     }
 }
 
+//Predicates with object type NSNumber
 - (FavoriteTicket *)favoriteFromTicket:(Ticket *)ticket {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteTicket"];
-    request.predicate = [NSPredicate predicateWithFormat:@"price == %ld AND airline == %@ AND from == %@ AND to == %@ AND departure == %@ AND expires == %@ AND flightNumber == %ld", (long)ticket.price.integerValue, ticket.airline, ticket.from, ticket.to, ticket.departure, ticket.expires, (long)ticket.flightNumber.integerValue];
+    request.predicate = [NSPredicate predicateWithFormat:@"price == %@ AND airline == %@ AND from == %@ AND to == %@ AND departure == %@ AND expires == %@ AND flightNumber == %@", [NSNumber numberWithLong:ticket.price.integerValue], ticket.airline, ticket.from, ticket.to, ticket.departure, ticket.expires, [NSNumber numberWithLong:ticket.flightNumber.integerValue]];
     return [[_managedObjectContext executeFetchRequest:request error:nil] firstObject];
 }
 
 
 - (FavoriteMapPrice *)favoriteFromMapPrice:(MapPrice *)mapPrice {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteMapPrice"];
-    request.predicate = [NSPredicate predicateWithFormat:@"destination == %@ AND origin == %@ AND departure == %@ AND returnDate == %@ AND numberOfChanges == %ld AND value == %ld AND distance == %ld", mapPrice.destination.name, mapPrice.origin.name, mapPrice.departure, mapPrice.returnDate, mapPrice.numberOfChanges, mapPrice.value, mapPrice.distance];
+    request.predicate = [NSPredicate predicateWithFormat:@"destination == %@ AND origin == %@ AND departure == %@ AND returnDate == %@ AND numberOfChanges == %@ AND value == %@ AND distance == %@", mapPrice.destination.name, mapPrice.origin.name, mapPrice.departure, mapPrice.returnDate, [NSNumber numberWithLong:mapPrice.numberOfChanges], [NSNumber numberWithLong:mapPrice.value], [NSNumber numberWithLong:mapPrice.distance]];
     return [[_managedObjectContext executeFetchRequest:request error:nil] firstObject];
 }
 
@@ -135,4 +136,15 @@
     return [_managedObjectContext executeFetchRequest:request error:nil];
 }
 
+//- (FavoriteTicket *)favoriteFromTicket:(Ticket *)ticket {
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteTicket"];
+//    request.predicate = [NSPredicate predicateWithFormat:@"price == %ld AND airline == %@ AND from == %@ AND to == %@ AND departure == %@ AND expires == %@ AND flightNumber == %ld", (long)ticket.price.integerValue, ticket.airline, ticket.from, ticket.to, ticket.departure, ticket.expires, (long)ticket.flightNumber.integerValue];
+//    return [[_managedObjectContext executeFetchRequest:request error:nil] firstObject];
+//}
+
+//- (FavoriteMapPrice *)favoriteFromMapPrice:(MapPrice *)mapPrice {
+//    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteMapPrice"];
+//    request.predicate = [NSPredicate predicateWithFormat:@"destination == %@ AND origin == %@ AND departure == %@ AND returnDate == %@ AND numberOfChanges == %ld AND value == %ld AND distance == %ld", mapPrice.destination.name, mapPrice.origin.name, mapPrice.departure, mapPrice.returnDate, mapPrice.numberOfChanges, mapPrice.value, mapPrice.distance];
+//    return [[_managedObjectContext executeFetchRequest:request error:nil] firstObject];
+//}
 @end

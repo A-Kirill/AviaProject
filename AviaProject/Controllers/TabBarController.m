@@ -43,20 +43,20 @@
     UINavigationController *mapNavigationController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
     [controllers addObject:mapNavigationController];
     
-    TicketsViewController *favoriteViewController = [[TicketsViewController alloc] initFavoriteTicketsController];
-    favoriteViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Избранное" image:[UIImage imageNamed:@"favorite"] selectedImage:[UIImage imageNamed:@"favorite_selected"]];
-    UINavigationController *favoriteNavigationController = [[UINavigationController alloc] initWithRootViewController:favoriteViewController];
-    [controllers addObject:favoriteNavigationController];
+    FavoriteViewController *favorite2ViewController = [[FavoriteViewController alloc] init];
+    favorite2ViewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:3];
+    UINavigationController *favorite2NavigationController = [[UINavigationController alloc] initWithRootViewController:favorite2ViewController];
+    [controllers addObject:favorite2NavigationController];
     
     CollectionViewController *collectionViewController = [[CollectionViewController alloc] init];
     collectionViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Images" image:[UIImage imageNamed:@"picture"] selectedImage:[UIImage imageNamed:@"picture-2"]];
     UINavigationController *collectionNavigationController = [[UINavigationController alloc] initWithRootViewController:collectionViewController];
     [controllers addObject:collectionNavigationController];
     
-    FavoriteViewController *favorite2ViewController = [[FavoriteViewController alloc] init];
-    favorite2ViewController.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemFavorites tag:5];
-    UINavigationController *favorite2NavigationController = [[UINavigationController alloc] initWithRootViewController:favorite2ViewController];
-    [controllers addObject:favorite2NavigationController];
+    //    TicketsViewController *favoriteViewController = [[TicketsViewController alloc] initFavoriteTicketsController];
+    //    favoriteViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Избранное" image:[UIImage imageNamed:@"favorite"] selectedImage:[UIImage imageNamed:@"favorite_selected"]];
+    //    UINavigationController *favoriteNavigationController = [[UINavigationController alloc] initWithRootViewController:favoriteViewController];
+    //    [controllers addObject:favoriteNavigationController];
     
     return controllers;
 }
