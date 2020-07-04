@@ -20,6 +20,8 @@
 		054B841F24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B841D24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.m */; };
 		054B842224A8E1F500351448 /* FavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B842124A8E1F500351448 /* FavoriteViewController.m */; };
 		054B842524B06CC200351448 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B842424B06CC200351448 /* ProgressView.m */; };
+		054B842824B0A62300351448 /* ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B842724B0A62300351448 /* ContentViewController.m */; };
+		054B842B24B0A72E00351448 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B842A24B0A72E00351448 /* FirstViewController.m */; };
 		054E2BC5249E5D10003A385F /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 054E2BC4249E5D10003A385F /* TabBarController.m */; };
 		0569BB7C249E6F3100C597CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0569BB7B249E6F3100C597CD /* Assets.xcassets */; };
 		0569BB7F249F69CD00C597CD /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0569BB7E249F69CD00C597CD /* CollectionViewController.m */; };
@@ -67,6 +69,10 @@
 		054B842124A8E1F500351448 /* FavoriteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FavoriteViewController.m; sourceTree = "<group>"; };
 		054B842324B06CC200351448 /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
 		054B842424B06CC200351448 /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		054B842624B0A62300351448 /* ContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContentViewController.h; sourceTree = "<group>"; };
+		054B842724B0A62300351448 /* ContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContentViewController.m; sourceTree = "<group>"; };
+		054B842924B0A72E00351448 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		054B842A24B0A72E00351448 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		054E2BC3249E5D10003A385F /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
 		054E2BC4249E5D10003A385F /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		0569BB7B249E6F3100C597CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,6 +139,10 @@
 				054E2BC4249E5D10003A385F /* TabBarController.m */,
 				0569BB7D249F69CD00C597CD /* CollectionViewController.h */,
 				0569BB7E249F69CD00C597CD /* CollectionViewController.m */,
+				054B842624B0A62300351448 /* ContentViewController.h */,
+				054B842724B0A62300351448 /* ContentViewController.m */,
+				054B842924B0A72E00351448 /* FirstViewController.h */,
+				054B842A24B0A72E00351448 /* FirstViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -381,6 +391,7 @@
 			files = (
 				05F8A661246F1C8E0011F7D1 /* City.m in Sources */,
 				054B841524A7389700351448 /* FavoriteTicket+CoreDataClass.m in Sources */,
+				054B842824B0A62300351448 /* ContentViewController.m in Sources */,
 				0569BB85249FC33B00C597CD /* ImageCollectionCell.m in Sources */,
 				05F8A65E246F1BE70011F7D1 /* Country.m in Sources */,
 				0526454E2482760D00976F69 /* APIManager.m in Sources */,
@@ -401,6 +412,7 @@
 				054E2BC5249E5D10003A385F /* TabBarController.m in Sources */,
 				054B841924A744A300351448 /* CoreDataHelper.m in Sources */,
 				054B841F24A8A92300351448 /* FavoriteMapPrice+CoreDataProperties.m in Sources */,
+				054B842B24B0A72E00351448 /* FirstViewController.m in Sources */,
 				05F8A64E246F11E10011F7D1 /* main.m in Sources */,
 				05F8A640246F11DE0011F7D1 /* AppDelegate.m in Sources */,
 				054B841024A736B300351448 /* AviaProject.xcdatamodeld in Sources */,

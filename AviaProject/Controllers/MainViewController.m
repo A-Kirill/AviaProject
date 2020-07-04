@@ -11,6 +11,7 @@
 #import "TicketsViewController.h"
 #import "MapViewController.h"
 #import "ProgressView.h"
+#import "FirstViewController.h"
 
 
 @interface MainViewController () <PlaceViewControllerDelegate>
@@ -86,6 +87,22 @@
     
     [_searchButton addTarget:self action:@selector(searchButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
 }
+
+//For ContentViewController
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self presentFirstViewControllerIfNeeded];
+}
+
+- (void)presentFirstViewControllerIfNeeded
+{
+    BOOL isFirstStart = [[NSUserDefaults standardUserDefaults] boolForKey:@"first_start"];
+    if (!isFirstStart) {
+        FirstViewController *firstViewController = [[FirstViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+        [self presentViewController:firstViewController animated:YES completion:nil];
+    }
+}
+
 
 - (void)searchButtonDidTap:(UIButton *)sender {
     if (_searchRequest.origin && _searchRequest.destionation) {
