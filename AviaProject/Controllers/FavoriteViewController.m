@@ -53,7 +53,10 @@
         default:
             break;
     }
-    [self.tableView reloadData];
+
+    [self.tableView beginUpdates];
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationBottom];
+    [self.tableView endUpdates];
 }
 
 #pragma mark - Table view data source

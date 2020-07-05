@@ -36,7 +36,7 @@
     self.navigationController.navigationBar.prefersLargeTitles = YES;
     self.title = @"Search";
     
-    _placeContainerView = [[UIView alloc] initWithFrame:CGRectMake(20.0, 140.0, [UIScreen mainScreen].bounds.size.width - 40.0, 170.0)];
+    _placeContainerView = [[UIView alloc] initWithFrame:CGRectMake(20.0, [UIScreen mainScreen].bounds.size.height/2 - 100.0, [UIScreen mainScreen].bounds.size.width - 40.0, 170.0)];
     _placeContainerView.backgroundColor = [UIColor whiteColor];
     _placeContainerView.layer.shadowColor = [[[UIColor blackColor] colorWithAlphaComponent:0.1] CGColor];
     _placeContainerView.layer.shadowOffset = CGSizeZero;
@@ -48,7 +48,7 @@
     [_departureButton setTitle:@"From" forState: UIControlStateNormal];
     _departureButton.tintColor = [UIColor blackColor];
     _departureButton.frame = CGRectMake(10.0, 20.0, _placeContainerView.frame.size.width - 20.0, 60.0);
-    _departureButton.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.1];
+    _departureButton.backgroundColor = [[UIColor colorWithRed:168.0f/255.0f green:218.0f/255.0f blue:220.0f/255.0f alpha:1]/*[UIColor lightGrayColor]*/ colorWithAlphaComponent:0.3];
     _departureButton.layer.cornerRadius = 4.0;
     [_departureButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.placeContainerView addSubview:_departureButton];
@@ -57,7 +57,7 @@
     [_arrivalButton setTitle:@"To" forState: UIControlStateNormal];
     _arrivalButton.tintColor = [UIColor blackColor];
     _arrivalButton.frame = CGRectMake(10.0, CGRectGetMaxY(_departureButton.frame) + 10.0, _placeContainerView.frame.size.width - 20.0, 60.0);
-    _arrivalButton.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.1];
+    _arrivalButton.backgroundColor = [[UIColor colorWithRed:168.0f/255.0f green:218.0f/255.0f blue:220.0f/255.0f alpha:1] colorWithAlphaComponent:0.3];
     _arrivalButton.layer.cornerRadius = 4.0;
     [_arrivalButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.placeContainerView addSubview:_arrivalButton];
@@ -65,10 +65,10 @@
     [self.view addSubview:_placeContainerView];
     
     _searchButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [_searchButton setTitle:@"Find" forState:UIControlStateNormal];
+    [_searchButton setTitle:@"Search" forState:UIControlStateNormal];
     _searchButton.tintColor = [UIColor whiteColor];
     _searchButton.frame = CGRectMake(30.0, CGRectGetMaxY(_placeContainerView.frame) + 30, [UIScreen mainScreen].bounds.size.width - 60.0, 60.0);
-    _searchButton.backgroundColor = [UIColor blackColor];
+    _searchButton.backgroundColor = [UIColor colorWithRed:69.0f/255.0f green:123.0f/255.0f blue:157.0f/255.0f alpha:1];
     _searchButton.layer.cornerRadius = 8.0;
     _searchButton.titleLabel.font = [UIFont systemFontOfSize:20.0 weight:UIFontWeightBold];
     [self.view addSubview:_searchButton];
@@ -105,9 +105,20 @@
 
 
 - (void)searchButtonDidTap:(UIButton *)sender {
+    
+    [UIView animateWithDuration:0.4
+                          delay:0
+                        options:UIViewAnimationOptionAutoreverse
+                     animations:^{
+                sender.frame = CGRectMake(40.0, CGRectGetMaxY(self->_placeContainerView.frame) + 40, [UIScreen mainScreen].bounds.size.width - 80.0, 40.0);
+                        }
+                     completion:^(BOOL finished) {
+                         sender.frame = CGRectMake(30.0, CGRectGetMaxY(self->_placeContainerView.frame) + 30, [UIScreen mainScreen].bounds.size.width - 60.0, 60.0);
+                     }];
+    
     if (_searchRequest.origin && _searchRequest.destionation) {
         [[ProgressView sharedInstance] show:^{
-            [[APIManager sharedInstance] ticketsWithRequest:_searchRequest withCompletion:^(NSArray *tickets) {
+            [[APIManager sharedInstance] ticketsWithRequest:self->_searchRequest withCompletion:^(NSArray *tickets) {
                 [[ProgressView sharedInstance] dismiss:^{
                     if (tickets.count > 0) {
                         TicketsViewController *ticketsViewController = [[TicketsViewController alloc] initWithTickets:tickets];
@@ -136,6 +147,7 @@
         placeViewController = [[PlaceViewController alloc] initWithType: PlaceTypeArrival];
     }
     placeViewController.delegate = self;
+    [UIView transitionFromView:self.view toView:placeViewController.view duration:0.6 options:UIViewAnimationOptionTransitionCurlDown completion:nil];
     [self.navigationController pushViewController: placeViewController animated:YES];
 }
 
@@ -177,7 +189,7 @@
 
 - (void)dataLoadedSuccessfully {
     [[APIManager sharedInstance] cityForCurrentIP:^(City *city) {
-        [self setPlace:city withDataType:DataSourceTypeCity andPlaceType:PlaceTypeDeparture forButton:_departureButton];
+        [self setPlace:city withDataType:DataSourceTypeCity andPlaceType:PlaceTypeDeparture forButton:self->_departureButton];
     }];
 }
 
