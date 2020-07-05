@@ -8,6 +8,7 @@
 
 #import "NotificationCenter.h"
 #import <UserNotifications/UserNotifications.h>
+#import "FavoriteViewController.h"
 
 @interface NotificationCenter () <UNUserNotificationCenterDelegate>
 @end
@@ -82,6 +83,15 @@
 //        }
 //        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     }
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+
+    id rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
+    FavoriteViewController *favoriteViewController = [[FavoriteViewController alloc] init];
+        UINavigationController *navigationView = [[UINavigationController alloc] initWithRootViewController:favoriteViewController];
+    [rootViewController presentViewController:navigationView animated:YES completion:nil];
+    
 }
 
 Notification NotificationMake(NSString* _Nullable title, NSString* _Nonnull body, NSDate* _Nonnull date, NSURL * _Nullable  imageURL) {
