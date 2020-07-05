@@ -34,6 +34,13 @@
     _segmentedControl.selectedSegmentIndex = 0;
     [self changeSource];
     
+    UIBarButtonItem *item=[[UIBarButtonItem alloc]
+                           initWithTitle:NSLocalizedString(@"Clear", @"")
+                           style:UIBarButtonItemStylePlain
+                           target:self
+                           action:@selector(removeAllFavorites)];
+    self.navigationItem.rightBarButtonItem = item;
+    
 }
 
 - (void)viewDidLoad {
@@ -57,6 +64,15 @@
     [self.tableView beginUpdates];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationBottom];
     [self.tableView endUpdates];
+}
+
+-(void)removeAllFavorites {
+    if (_segmentedControl.selectedSegmentIndex == 0){
+        [[CoreDataHelper sharedInstance] removeAllMapPrice];
+    } else {
+        [[CoreDataHelper sharedInstance] removeAll];
+    }
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -85,14 +101,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (_segmentedControl.selectedSegmentIndex == 0){
-        [[CoreDataHelper sharedInstance] removeFromFavoriteMapPrice: [_prices objectAtIndex:indexPath.row]];
-        [self.tableView reloadData];
-    } else {
-        [[CoreDataHelper sharedInstance] removeFromFavorite: [_prices objectAtIndex:indexPath.row]];
-        [self.tableView reloadData];
-    }
-    
 }
 
 @end

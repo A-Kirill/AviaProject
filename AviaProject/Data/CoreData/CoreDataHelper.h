@@ -30,6 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addToFavoriteMapPrice:(MapPrice *)mapPrice;
 - (void)removeFromFavoriteMapPrice:(MapPrice *)mapPrice;
 
+-(void)removeAll;
+-(void)removeAllMapPrice;
+
 @end
 
 NS_ASSUME_NONNULL_END

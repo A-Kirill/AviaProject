@@ -136,6 +136,19 @@
     return [_managedObjectContext executeFetchRequest:request error:nil];
 }
 
+-(void)removeAll {
+    for (NSManagedObject* i in self.favorites) {
+        [_managedObjectContext deleteObject:i];
+    }
+    [self save];
+}
+
+-(void)removeAllMapPrice {
+    for (NSManagedObject* i in self.favoritesMapPrice) {
+        [_managedObjectContext deleteObject:i];
+    }
+    [self save];
+}
 //- (FavoriteTicket *)favoriteFromTicket:(Ticket *)ticket {
 //    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"FavoriteTicket"];
 //    request.predicate = [NSPredicate predicateWithFormat:@"price == %ld AND airline == %@ AND from == %@ AND to == %@ AND departure == %@ AND expires == %@ AND flightNumber == %ld", (long)ticket.price.integerValue, ticket.airline, ticket.from, ticket.to, ticket.departure, ticket.expires, (long)ticket.flightNumber.integerValue];
