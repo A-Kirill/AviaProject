@@ -11,6 +11,7 @@
 #import "APIManager.h"
 #import "MapPrice.h"
 #import "CoreDataHelper.h"
+#import "NSString+Localize.h"
 
 
 @interface MapViewController () <MKMapViewDelegate>
@@ -31,7 +32,7 @@
     
     CGRect frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     
-    self.title = @"Price map";
+    self.title = @"map_tab".localize;
     
     _mapView = [[MKMapView alloc] initWithFrame:frame];
     _mapView.showsUserLocation = YES;
@@ -109,18 +110,18 @@
     }
     if (curPrice != nil) {
         NSString *title = [NSString stringWithFormat:@"%@\n%@", view.annotation.title, view.annotation.subtitle];
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:@"Что необходимо сделать?" preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:@"actions_with_tickets_describe".localize preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *favoriteAction;
         if ([[CoreDataHelper sharedInstance] isFavoriteMapPrice:curPrice]) {
-            favoriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            favoriteAction = [UIAlertAction actionWithTitle:@"remove_from_favorite".localize style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
                 [[CoreDataHelper sharedInstance] removeFromFavoriteMapPrice:curPrice];
             }];
         } else {
-            favoriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            favoriteAction = [UIAlertAction actionWithTitle:@"add_to_favorite".localize style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 [[CoreDataHelper sharedInstance] addToFavoriteMapPrice:curPrice];
             }];
         }
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"close".localize style:UIAlertActionStyleCancel handler:nil];
         [alertController addAction:favoriteAction];
         [alertController addAction:cancelAction];
         [self presentViewController:alertController animated:YES completion:nil];
@@ -136,8 +137,8 @@
             for (MKPlacemark *placemark in placemarks) {
                 [address appendString:placemark.name];
             }
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Your location address" message:address preferredStyle: UIAlertControllerStyleAlert];
-            [alertController addAction:[UIAlertAction actionWithTitle:@"Close" style:(UIAlertActionStyleDefault) handler:nil]];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"location_adress".localize message:address preferredStyle: UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"close".localize style:(UIAlertActionStyleDefault) handler:nil]];
             [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
         }
     }];

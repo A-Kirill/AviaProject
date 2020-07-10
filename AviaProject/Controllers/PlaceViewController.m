@@ -7,6 +7,7 @@
 //
 
 #import "PlaceViewController.h"
+#import "NSString+Localize.h"
 
 #define ReuseIdentifier @"CellIdentifier"
 
@@ -53,7 +54,7 @@
     }
     [self.view addSubview:_tableView];
     
-    _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"Cities", @"Airports"]];
+    _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"cities".localize, @"airports".localize]];
     [_segmentedControl addTarget:self action:@selector(changeSource) forControlEvents:UIControlEventValueChanged];
     _segmentedControl.tintColor = [UIColor blackColor];
     self.navigationItem.titleView = _segmentedControl;
@@ -61,9 +62,9 @@
     [self changeSource];
     
     if (_placeType == PlaceTypeDeparture) {
-        self.title = @"From";
+        self.title = @"main_from".localize;
     } else {
-        self.title = @"To";
+        self.title = @"main_to".localize;
     }
 }
 

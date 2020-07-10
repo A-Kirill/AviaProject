@@ -12,6 +12,7 @@
 #import "CollectionViewController.h"
 #import "TicketsViewController.h"
 #import "FavoriteViewController.h"
+#import "NSString+Localize.h"
 
 @interface TabBarController ()
 
@@ -34,12 +35,12 @@
     NSMutableArray<UIViewController*> *controllers = [NSMutableArray new];
     
     MainViewController *mainViewController = [[MainViewController alloc] init];
-    mainViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Search" image:[UIImage imageNamed:@"search"] selectedImage:[UIImage imageNamed:@"search_selected"]];
+    mainViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"search_tab".localize image:[UIImage imageNamed:@"search"] selectedImage:[UIImage imageNamed:@"search_selected"]];
     UINavigationController *mainNavigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     [controllers addObject:mainNavigationController];
     
     MapViewController *mapViewController = [[MapViewController alloc] init];
-    mapViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Price map" image:[UIImage imageNamed:@"map"] selectedImage:[UIImage imageNamed:@"map_selected"]];
+    mapViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"map_tab".localize image:[UIImage imageNamed:@"map"] selectedImage:[UIImage imageNamed:@"map_selected"]];
     UINavigationController *mapNavigationController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
     [controllers addObject:mapNavigationController];
     
@@ -49,7 +50,7 @@
     [controllers addObject:favorite2NavigationController];
     
     CollectionViewController *collectionViewController = [[CollectionViewController alloc] init];
-    collectionViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Images" image:[UIImage imageNamed:@"picture"] selectedImage:[UIImage imageNamed:@"picture-2"]];
+    collectionViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"images_tab".localize image:[UIImage imageNamed:@"picture"] selectedImage:[UIImage imageNamed:@"picture-2"]];
     UINavigationController *collectionNavigationController = [[UINavigationController alloc] initWithRootViewController:collectionViewController];
     [controllers addObject:collectionNavigationController];
     
